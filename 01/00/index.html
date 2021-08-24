@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <h1>Hello! Good Bye.</h1>
+
+        <div id="output"></div>
+
+        <input id = "user" type="text">
+
+        <button onclick="update();">Update</button>
+
+        <script>
+            function update() {
+                let username = user.value;
+
+                output.innerText = "Username: " + username;
+            }
+        </script>
+    </body>
+</html>
