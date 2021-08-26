@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01.01 - The elements of programming</title>
+</head>
+<body>
+    <h1>Square Root Calculator</h1>
+    
+    <label for="num">Enter a Number:</label>
+
+    <input id="num" type="number">
+
+    <button id="calculate" onclick = "calcHeron();">Calculate</button>
+
+    <div id="output"></div>
+
+    <script>
+        
+        // recursive approach - probably not the best way to do it 
+        
+        function calcHeron() {
+            let N = parseInt(num.value);
+            let g = N / 2;
+            let t = 0.001;
+
+            verifyHeron(g, N, t);
+            
+        }
+
+        function verifyHeron(g, N, t) {
+            if (Math.abs((g * g) - N) < t) {
+                output.innerText = g;
+                return;
+            }
+            g = (g + N / g) / 2;
+            verifyHeron(g, N, t);
+        }
+
+    </script>
+</body>
+</html>
